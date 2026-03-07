@@ -1,9 +1,15 @@
-# Admin Content Editor
+# CKEditor Admin Content Editor
 
-This project demonstrates integration of CKEditor with React to build a simple admin content editor.
+A small **Admin Content Management Tool** built with **React** and **CKEditor 5**.  
+This project simulates a **mini CMS dashboard**, allowing admins to create, edit, and preview rich content pages.
 
-Features:
-- Rich text editing
-- Toolbar formatting
-- Live preview
-- Save content using localStorage
+---
+
+## Features
+
+- Sidebar with **existing pages** and **create new page** button  
+- Edit **page title** and **slug**  
+- Rich text content editing using **CKEditor**  
+- **Live preview** of rendered HTML content  
+- Save page updates with **localStorage persistence**  
+- Admin-style workflow similar to enterprise CMS
