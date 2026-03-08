@@ -44,7 +44,12 @@ import {
   Highlight,
   FindAndReplace,
   RemoveFormat,
-  WordCount
+  WordCount,
+  Mention,
+  Emoji,
+  SpecialCharacters,
+  SpecialCharactersEssentials,
+  Fullscreen
 } from "ckeditor5";
 
 import "ckeditor5/ckeditor5.css";
@@ -126,7 +131,12 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
             Highlight,
             FindAndReplace,
             RemoveFormat,
-            WordCount
+            WordCount,
+            Mention,
+            Emoji,
+            SpecialCharacters,
+            SpecialCharactersEssentials,
+            Fullscreen
           ],
           toolbar: {
             items: [
@@ -157,6 +167,9 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
               "blockQuote",
               "codeBlock",
               "horizontalLine",
+              "|",
+              "emoji",
+              "specialCharacters",
               "-",
               "highlight",
               "removeFormat",
@@ -165,7 +178,9 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
               "sourceEditing",
               "|",
               "undo",
-              "redo"
+              "redo",
+              "|",
+              "fullscreen"
             ],
             shouldNotGroupWhenFull: true
           },
