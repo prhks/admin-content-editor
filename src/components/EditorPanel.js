@@ -367,6 +367,7 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
         <div className="editor-wrapper">
           {containersReady && (
             <CKEditor
+              key={page.id}
               editor={ClassicEditor}
               data={page.content}
               config={buildConfig()}
