@@ -20,6 +20,8 @@ import {
   ImageStyle,
   ImageToolbar,
   ImageUpload,
+  ImageInsert,
+  ImageInsertViaUrl,
   Table,
   TableToolbar,
   TableCaption,
@@ -53,7 +55,9 @@ import {
   CloudServices,
   CKBox,
   CKBoxImageEdit,
-  PictureEditing
+  PictureEditing,
+  HtmlEmbed,
+  GeneralHtmlSupport
 } from "ckeditor5";
 
 import {
@@ -129,6 +133,8 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
       ImageStyle,
       ImageToolbar,
       ImageUpload,
+      ImageInsert,
+      ImageInsertViaUrl,
       Table,
       TableToolbar,
       TableCaption,
@@ -174,7 +180,9 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
       MergeFields,
       CKBox,
       CKBoxImageEdit,
-      PictureEditing
+      PictureEditing,
+      HtmlEmbed,
+      GeneralHtmlSupport
     ];
 
     const collaborationPlugins = COLLABORATION_ENABLED
@@ -222,9 +230,11 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
       "link",
       "insertTable",
       "mediaEmbed",
+      "insertImage",
       "ckbox",
       "blockQuote",
       "codeBlock",
+      "htmlEmbed",
       "horizontalLine",
       "|",
       "insertTemplate",
@@ -317,6 +327,11 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
       },
       ckbox: {
         tokenUrl: TOKEN_URL
+      },
+      htmlSupport: {
+        allow: [
+          { name: /.*/, attributes: true, classes: true, styles: true }
+        ]
       },
       wordCount: {
         onUpdate: (stats) => {
