@@ -8,14 +8,26 @@ Create, edit, preview, and manage rich content pages with a full-featured editin
 ## Features
 
 ### Editor
-- Full-featured **CKEditor 5** toolbar with 40+ plugins
+- Full-featured **CKEditor 5** toolbar with 50+ plugins
 - **Text formatting**: bold, italic, strikethrough, underline, subscript, superscript
 - **Font controls**: size, family, color, background color
 - **Block elements**: headings, blockquotes, code blocks, horizontal lines
-- **Lists**: bulleted, numbered, and to-do lists with indentation
-- **Media**: image upload, table insertion, YouTube/Vimeo embeds
-- **Utilities**: alignment, highlight, find & replace, source editing, remove format
+- **Lists**: bulleted, numbered, multi-level, and to-do lists with indentation
+- **Images**: upload, insert via URL, resize, caption, inline/block/side styles
+- **Media**: table insertion, YouTube/Vimeo embeds, CKBox file manager & image editor
+- **HTML embed**: insert raw HTML snippets with live preview
+- **Templates**: predefined content templates (blog post, product page, FAQ)
+- **Document tools**: document outline, table of contents, merge fields
+- **Export/Import**: PDF export, Word export, Word import
+- **Utilities**: alignment, highlight, find & replace, source editing, remove format, emoji, special characters, fullscreen
+- **Premium**: slash commands, format painter, case change
 - **Live word & character count**
+
+### Real-Time Collaboration (optional)
+- **Collaborative editing** with presence list
+- **Comments & track changes**
+- **Revision history**
+- Requires `REACT_APP_CKEDITOR_TOKEN_URL` and `REACT_APP_CKEDITOR_WS_URL` environment variables
 
 ### Content Management
 - Sidebar with page list and **create new page** button
@@ -42,10 +54,19 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 > **Tip:** Clear localStorage to load the rich sample pages with demo content.
 
+### Environment Variables
+
+| Variable | Required | Description |
+|---|---|---|
+| `REACT_APP_CKEDITOR_LICENSE_KEY` | Yes | CKEditor premium features license key (defaults to `GPL`) |
+| `REACT_APP_CKEDITOR_TOKEN_URL` | No | CKBox & collaboration token endpoint |
+| `REACT_APP_CKEDITOR_WS_URL` | No | WebSocket URL for real-time collaboration |
+
 ---
 
 ## Tech Stack
 
 - **React 19**
 - **CKEditor 5** (`ckeditor5` unified package)
+- **CKEditor 5 Premium Features** (`ckeditor5-premium-features`)
 - **@ckeditor/ckeditor5-react**
