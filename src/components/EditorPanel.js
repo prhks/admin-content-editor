@@ -50,7 +50,10 @@ import {
   SpecialCharacters,
   SpecialCharactersEssentials,
   Fullscreen,
-  CloudServices
+  CloudServices,
+  CKBox,
+  CKBoxImageEdit,
+  PictureEditing
 } from "ckeditor5";
 
 import {
@@ -168,7 +171,10 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
       MultiLevelList,
       DocumentOutline,
       TableOfContents,
-      MergeFields
+      MergeFields,
+      CKBox,
+      CKBoxImageEdit,
+      PictureEditing
     ];
 
     const collaborationPlugins = COLLABORATION_ENABLED
@@ -216,6 +222,7 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
       "link",
       "insertTable",
       "mediaEmbed",
+      "ckbox",
       "blockQuote",
       "codeBlock",
       "horizontalLine",
@@ -263,7 +270,9 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
           "imageStyle:side",
           "|",
           "toggleImageCaption",
-          "imageTextAlternative"
+          "imageTextAlternative",
+          "|",
+          "ckboxImageEdit"
         ]
       },
       table: {
@@ -305,6 +314,9 @@ function EditorPanel({ page, setContent, setTitle, setSlug }) {
           { id: "company", label: "Company" },
           { id: "date", label: "Date" }
         ]
+      },
+      ckbox: {
+        tokenUrl: TOKEN_URL
       },
       wordCount: {
         onUpdate: (stats) => {
